@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NovAI — Theme Documentation</title>
+    <style>
+        :root {
+            --bg: #0D0B1A;
+            --surface: #1E1A38;
+            --raised: #2A2550;
+            --purple: #6C47FF;
+            --violet: #A78BFA;
+            --blue: #38BDF8;
+            --white: #F7F6FE;
+            --muted: #8B83C4;
+            --border: rgba(108, 71, 255, 0.2);
+            --font: Inter, system-ui, sans-serif;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--white);
+            font-family: var(--font);
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        a {
+            color: var(--violet);
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: var(--blue);
+            text-decoration: underline;
+        }
+
+        code,
+        pre {
+            font-family: "Menlo", "Consolas", "Courier New", monospace;
+            background: var(--raised);
+            border-radius: 6px;
+        }
+
+        code {
+            padding: 2px 6px;
+            font-size: 0.875em;
+        }
+
+        pre {
+            padding: 20px;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            border: 1px solid var(--border);
+        }
+
+        pre code {
+            background: none;
+            padding: 0;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #fff 0%, var(--violet) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        h2 {
+            font-size: 1.75rem;
+            margin: 3rem 0 1rem;
+            color: var(--white);
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            margin: 2rem 0 0.75rem;
+            color: var(--violet);
+        }
+
+        h4 {
+            font-size: 1rem;
+            margin: 1.5rem 0 0.5rem;
+            color: var(--blue);
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        ul,
+        ol {
+            margin: 0 0 1rem 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.35rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+
+        th {
+            background: var(--raised);
+            text-align: left;
+            padding: 10px 14px;
+            font-weight: 600;
+            border: 1px solid var(--border);
+            color: var(--violet);
+        }
+
+        td {
+            padding: 10px 14px;
+            border: 1px solid var(--border);
+        }
+
+        tr:nth-child(even) td {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            background: var(--purple);
+            color: #fff;
+            margin-right: 6px;
+        }
+
+        .note {
+            background: var(--surface);
+            border-left: 3px solid var(--purple);
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 1.5rem 0;
+        }
+
+        .warning {
+            background: rgba(234, 179, 8, 0.1);
+            border-left: 3px solid #EAB308;
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 1.5rem 0;
+        }
+
+        /* Layout */
+        .wrapper {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        nav {
+            width: 260px;
+            min-width: 260px;
+            background: var(--surface);
+            border-right: 1px solid var(--border);
+            padding: 40px 0;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            overflow-y: auto;
+        }
+
+        nav .logo {
+            padding: 0 24px 32px;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: -0.02em;
+        }
+
+        nav .logo span {
+            color: var(--purple);
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li a {
+            display: block;
+            padding: 8px 24px;
+            font-size: 0.9rem;
+            color: var(--muted);
+            transition: color 0.15s, background 0.15s;
+            border-left: 3px solid transparent;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: var(--white);
+            background: rgba(108, 71, 255, 0.08);
+            border-left-color: var(--purple);
+            text-decoration: none;
+        }
+
+        nav .section-label {
+            padding: 20px 24px 6px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--muted);
+        }
+
+        main {
+            flex: 1;
+            padding: 60px;
+            max-width: 900px;
+        }
+
+        .hero {
+            margin-bottom: 4rem;
+        }
+
+        .hero p {
+            font-size: 1.125rem;
+            color: var(--muted);
+            max-width: 600px;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 1.5rem 0;
+        }
+
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 24px;
+        }
+
+        .card h4 {
+            margin-top: 0;
+        }
+
+        footer.doc-footer {
+            background: var(--surface);
+            border-top: 1px solid var(--border);
+            padding: 32px 60px;
+            color: var(--muted);
+            font-size: 0.875rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <!-- Sidebar Navigation -->
+        <nav>
+            <div class="logo">Nov<span>AI</span></div>
+            <ul>
+                <li>
+                    <div class="section-label">Getting Started</div>
+                </li>
+                <li><a href="#requirements">Requirements</a></li>
+                <li><a href="#installation">Installation</a></li>
+                <li><a href="#demo-import">Demo Import</a></li>
+                <li>
+                    <div class="section-label">Theme Features</div>
+                </li>
+                <li><a href="#templates">Starter Templates</a></li>
+                <li><a href="#style-variations">Style Variations</a></li>
+                <li><a href="#patterns">Block Patterns</a></li>
+                <li><a href="#fonts">Typography</a></li>
+                <li>
+                    <div class="section-label">Customisation</div>
+                </li>
+                <li><a href="#colors">Colors &amp; Tokens</a></li>
+                <li><a href="#spacing">Spacing Scale</a></li>
+                <li><a href="#site-editor">Site Editor</a></li>
+                <li>
+                    <div class="section-label">Development</div>
+                </li>
+                <li><a href="#file-structure">File Structure</a></li>
+                <li><a href="#child-theme">Child Theme</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li>
+                    <div class="section-label">Submission</div>
+                </li>
+                <li><a href="#changelog">Changelog</a></li>
+                <li><a href="#support">Support</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main>
+
+            <section class="hero">
+                <h1>NovAI Documentation</h1>
+                <p>Everything you need to install, configure, and customise the NovAI WordPress block theme for AI
+                    startups, SaaS products, and developer-first companies.</p>
+                <p><span class="badge">v1.0.0</span> <span class="badge">WordPress 6.4+</span> <span class="badge">PHP
+                        8.0+</span> <span class="badge">FSE</span></p>
+            </section>
+
+            <!-- Requirements -->
+            <section id="requirements">
+                <h2>Requirements</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Software</th>
+                            <th>Minimum Version</th>
+                            <th>Recommended</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>WordPress</td>
+                            <td>6.4</td>
+                            <td>6.6+</td>
+                        </tr>
+                        <tr>
+                            <td>PHP</td>
+                            <td>8.0</td>
+                            <td>8.2+</td>
+                        </tr>
+                        <tr>
+                            <td>Browser</td>
+                            <td>Any modern browser</td>
+                            <td>Chrome, Firefox, Safari, Edge</td>
+                        </tr>
+                        <tr>
+                            <td>Required Plugins</td>
+                            <td colspan="2">None. WP All Import for demo content (optional).</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="note"><strong>Note:</strong> NovAI requires the WordPress block editor (Gutenberg) and Full
+                    Site Editing (FSE) support. It is not compatible with classic PHP themes or page builders.</div>
+            </section>
+
+            <!-- Installation -->
+            <section id="installation">
+                <h2>Installation</h2>
+
+                <h3>Method 1 — WordPress Admin (Recommended)</h3>
+                <ol>
+                    <li>Log in to your WordPress admin dashboard.</li>
+                    <li>Go to <strong>Appearance → Themes → Add New</strong>.</li>
+                    <li>Click <strong>Upload Theme</strong> and select the <code>novai.zip</code> file.</li>
+                    <li>Click <strong>Install Now</strong>, then <strong>Activate</strong>.</li>
+                </ol>
+
+                <h3>Method 2 — WP-CLI</h3>
+                <pre><code>wp theme install novai.zip --activate</code></pre>
+
+                <h3>Method 3 — Manual Upload</h3>
+                <ol>
+                    <li>Extract <code>novai.zip</code>.</li>
+                    <li>Upload the <code>novai/</code> folder to <code>/wp-content/themes/</code> via FTP/SFTP.</li>
+                    <li>In WordPress admin, go to <strong>Appearance → Themes</strong> and activate NovAI.</li>
+                </ol>
+            </section>
+
+            <!-- Demo Import -->
+            <section id="demo-import">
+                <h2>Demo Content Import</h2>
+                <p>NovAI ships with a demo content XML file covering all three starter templates.</p>
+                <ol>
+                    <li>Install and activate the <a href="https://wordpress.org/plugins/wp-all-import/"
+                            target="_blank">WP All Import</a> plugin.</li>
+                    <li>Go to <strong>All Import → New Import</strong>.</li>
+                    <li>Upload <code>demo/content.xml</code> from the theme package.</li>
+                    <li>Follow the import wizard. Map fields as prompted.</li>
+                    <li>After import, assign the front page in <strong>Settings → Reading → Your homepage displays → A
+                            static page</strong>.</li>
+                </ol>
+                <div class="warning"><strong>Important:</strong> Import demo content on a fresh WordPress installation
+                    to avoid conflicts with existing content.</div>
+            </section>
+
+            <!-- Starter Templates -->
+            <section id="templates">
+                <h2>Starter Templates</h2>
+                <p>NovAI includes three complete starter templates, switchable via Style Variations.</p>
+                <div class="grid-2">
+                    <div class="card">
+                        <h4>NovAI — AI Tools</h4>
+                        <p>Deep Space · Nova Purple · Inter. Dark immersive layout for AI product launches.</p>
+                    </div>
+                    <div class="card">
+                        <h4>Orbit — SaaS Analytics</h4>
+                        <p>Dark Navy · Sky Blue · Inter. Data-display layouts for SaaS companies.</p>
+                    </div>
+                    <div class="card">
+                        <h4>Forge — Developer Tools</h4>
+                        <p>True Black · Amber · Mono. Code-centric aesthetic for API and CLI products.</p>
+                    </div>
+                    <div class="card">
+                        <h4>Any Custom Template</h4>
+                        <p>Combine any of the 28 patterns to build a completely custom layout.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Style Variations -->
+            <section id="style-variations">
+                <h2>Style Variations</h2>
+                <p>Switch the entire color scheme from <strong>Appearance → Editor → Styles → Browse Styles</strong>.
+                </p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Variation</th>
+                            <th>Background</th>
+                            <th>Accent</th>
+                            <th>Feel</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Dark (Default)</strong></td>
+                            <td>#0D0B1A</td>
+                            <td>#6C47FF</td>
+                            <td>Flagship NovAI template</td>
+                        </tr>
+                        <tr>
+                            <td>Minimal</td>
+                            <td>#F7F6FE</td>
+                            <td>#6C47FF</td>
+                            <td>Clean light mode</td>
+                        </tr>
+                        <tr>
+                            <td>Vibrant</td>
+                            <td>Gradient</td>
+                            <td>#6C47FF→#38BDF8</td>
+                            <td>Bold gradient hero</td>
+                        </tr>
+                        <tr>
+                            <td>Corporate</td>
+                            <td>#FFFFFF</td>
+                            <td>#6C47FF</td>
+                            <td>Professional, approachable</td>
+                        </tr>
+                        <tr>
+                            <td>Gradient</td>
+                            <td>#0D0B1A + glows</td>
+                            <td>#6C47FF</td>
+                            <td>Dark with radial accents</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Block Patterns -->
+            <section id="patterns">
+                <h2>Block Patterns</h2>
+                <p>Access all 28 patterns from <strong>Appearance → Editor → Patterns</strong> or via the block inserter
+                    (<strong>+</strong> button).</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>Count</th>
+                            <th>Patterns</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Navigation</td>
+                            <td>3</td>
+                            <td>nav-dark, nav-light, nav-minimal</td>
+                        </tr>
+                        <tr>
+                            <td>Heroes</td>
+                            <td>4</td>
+                            <td>hero-dark, hero-split, hero-light, hero-code</td>
+                        </tr>
+                        <tr>
+                            <td>Features</td>
+                            <td>4</td>
+                            <td>features-3col, features-alt, features-bento, features-stats</td>
+                        </tr>
+                        <tr>
+                            <td>Social Proof</td>
+                            <td>4</td>
+                            <td>logos, testimonials-3col, testimonial-featured, team</td>
+                        </tr>
+                        <tr>
+                            <td>Pricing &amp; CTA</td>
+                            <td>5</td>
+                            <td>pricing-3col, pricing-2col, cta-dark, cta-light, waitlist</td>
+                        </tr>
+                        <tr>
+                            <td>Content</td>
+                            <td>6</td>
+                            <td>how-steps, faq, code-block, changelog, integrations, stats-bar</td>
+                        </tr>
+                        <tr>
+                            <td>Footers</td>
+                            <td>2</td>
+                            <td>footer-dark, footer-minimal</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Typography -->
+            <section id="fonts">
+                <h2>Typography</h2>
+                <p>NovAI uses a self-hosted <strong>Inter</strong> variable font — no Google Fonts, no CDN,
+                    GDPR-compliant.</p>
+                <ul>
+                    <li><strong>Inter Regular 400</strong> — body text, UI labels</li>
+                    <li><strong>Inter SemiBold 600</strong> — headings, CTAs, badges</li>
+                </ul>
+                <p>The font scale uses CSS <code>clamp()</code> for fluid sizing — text scales smoothly between mobile
+                    and desktop without media query breakpoints.</p>
+            </section>
+
+            <!-- Colors -->
+            <section id="colors">
+                <h2>Colors &amp; Design Tokens</h2>
+                <p>All colors are defined in <code>theme.json</code> as CSS custom properties. Never hardcode hex values
+                    in custom CSS or child themes — use the token variables.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Token</th>
+                            <th>CSS Variable</th>
+                            <th>Hex</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>nova-purple</td>
+                            <td><code>--wp--preset--color--nova-purple</code></td>
+                            <td>#6C47FF</td>
+                        </tr>
+                        <tr>
+                            <td>stellar-violet</td>
+                            <td><code>--wp--preset--color--stellar-violet</code></td>
+                            <td>#A78BFA</td>
+                        </tr>
+                        <tr>
+                            <td>orbit-blue</td>
+                            <td><code>--wp--preset--color--orbit-blue</code></td>
+                            <td>#38BDF8</td>
+                        </tr>
+                        <tr>
+                            <td>deep-space</td>
+                            <td><code>--wp--preset--color--deep-space</code></td>
+                            <td>#0D0B1A</td>
+                        </tr>
+                        <tr>
+                            <td>nebula</td>
+                            <td><code>--wp--preset--color--nebula</code></td>
+                            <td>#1E1A38</td>
+                        </tr>
+                        <tr>
+                            <td>cloud-white</td>
+                            <td><code>--wp--preset--color--cloud-white</code></td>
+                            <td>#F7F6FE</td>
+                        </tr>
+                        <tr>
+                            <td>forge-amber</td>
+                            <td><code>--wp--preset--color--forge-amber</code></td>
+                            <td>#EAB308</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Spacing -->
+            <section id="spacing">
+                <h2>Spacing Scale</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Token</th>
+                            <th>CSS Variable</th>
+                            <th>Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>xs</td>
+                            <td><code>--wp--preset--spacing--xs</code></td>
+                            <td>8px</td>
+                        </tr>
+                        <tr>
+                            <td>sm</td>
+                            <td><code>--wp--preset--spacing--sm</code></td>
+                            <td>16px</td>
+                        </tr>
+                        <tr>
+                            <td>md</td>
+                            <td><code>--wp--preset--spacing--md</code></td>
+                            <td>24px</td>
+                        </tr>
+                        <tr>
+                            <td>lg</td>
+                            <td><code>--wp--preset--spacing--lg</code></td>
+                            <td>48px</td>
+                        </tr>
+                        <tr>
+                            <td>xl</td>
+                            <td><code>--wp--preset--spacing--xl</code></td>
+                            <td>64px</td>
+                        </tr>
+                        <tr>
+                            <td>2xl</td>
+                            <td><code>--wp--preset--spacing--2xl</code></td>
+                            <td>96px</td>
+                        </tr>
+                        <tr>
+                            <td>3xl</td>
+                            <td><code>--wp--preset--spacing--3xl</code></td>
+                            <td>128px</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Site Editor -->
+            <section id="site-editor">
+                <h2>Using the Site Editor</h2>
+                <ol>
+                    <li>Go to <strong>Appearance → Editor</strong>.</li>
+                    <li>Use the <strong>Templates</strong> panel to edit page templates.</li>
+                    <li>Use the <strong>Patterns</strong> panel to insert pre-built sections.</li>
+                    <li>Use <strong>Styles → Browse Styles</strong> to switch between the 5 color schemes.</li>
+                    <li>Use <strong>Styles → Edit Styles</strong> to customise Global Styles (colors, fonts, spacing)
+                        without writing CSS.</li>
+                </ol>
+            </section>
+
+            <!-- File Structure -->
+            <section id="file-structure">
+                <h2>File Structure</h2>
+                <pre><code>novai/
+├── assets/
+│   ├── css/
+│   │   ├── custom.css          Supplemental CSS
+│   │   └── editor.css          Editor dark-mode parity
+│   ├── fonts/inter/            Self-hosted WOFF2 files
+│   ├── images/                 screenshot.png + previews
+│   └── js/
+│       └── navigation.js       Sticky header + scroll reveal
+├── demo/
+│   └── content.xml             Demo content import
+├── docs/
+│   └── index.html              This documentation file
+├── inc/
+│   ├── block-patterns.php      Pattern category registration
+│   ├── font-preload.php        WOFF2 preload hints
+│   └── performance.php         Asset optimisation hooks
+├── languages/
+│   └── novai.pot               Translation template
+├── parts/
+│   ├── header.html             Sticky dark navigation
+│   └── footer.html             4-column footer
+├── patterns/                   28 block pattern PHP files
+├── styles/                     5 style variation JSON files
+├── templates/                  7 page template HTML files
+├── functions.php
+├── index.php
+├── readme.txt
+├── style.css                   Theme header
+└── theme.json                  Design token system</code></pre>
+            </section>
+
+            <!-- Child Theme -->
+            <section id="child-theme">
+                <h2>Creating a Child Theme</h2>
+                <p>To safely customise NovAI without losing changes on update, create a child theme:</p>
+                <p>Create a folder <code>novai-child/</code> in <code>/wp-content/themes/</code> with this
+                    <code>style.css</code>:</p>
+                <pre><code>/*
+Theme Name: NovAI Child
+Template:   novai
+Version:    1.0.0
+*/</code></pre>
+                <p>And a minimal <code>functions.php</code>:</p>
+                <pre><code>&lt;?php
+add_action( 'wp_enqueue_scripts', function () {
+    wp_enqueue_style(
+        'novai-child-style',
+        get_stylesheet_uri(),
+        [ 'novai-style' ],
+        wp_get_theme()->get( 'Version' )
+    );
+} );</code></pre>
+            </section>
+
+            <!-- FAQ -->
+            <section id="faq">
+                <h2>Frequently Asked Questions</h2>
+
+                <h3>Can I use NovAI without the block editor?</h3>
+                <p>No. NovAI is a Full Site Editing (FSE) block theme. It requires WordPress 6.4+ with the block editor
+                    enabled. Classic editor mode is not supported.</p>
+
+                <h3>Does NovAI work with WooCommerce?</h3>
+                <p>NovAI is WooCommerce-compatible. Full template overrides are planned for v1.1.</p>
+
+                <h3>Are the fonts GDPR-compliant?</h3>
+                <p>Yes. NovAI self-hosts the Inter font in <code>assets/fonts/inter/</code>. No requests are made to
+                    Google Fonts or any external CDN.</p>
+
+                <h3>How do I update the theme?</h3>
+                <p>For ThemeForest purchases: download the new version and install via <strong>Appearance → Themes →
+                        Upload Theme</strong>. For WordPress.org: use the standard automatic update mechanism.</p>
+
+                <h3>Can I translate NovAI?</h3>
+                <p>Yes. Use <code>languages/novai.pot</code> as a base. Generate <code>.po</code> and <code>.mo</code>
+                    files with Poedit or WP-CLI: <code>wp i18n make-mo languages/</code></p>
+            </section>
+
+            <!-- Changelog -->
+            <section id="changelog">
+                <h2>Changelog</h2>
+                <h3>v1.0.0 — 2026-06-09</h3>
+                <ul>
+                    <li>Initial release</li>
+                    <li>Three starter templates: NovAI, Orbit, Forge</li>
+                    <li>28 block patterns across 7 categories</li>
+                    <li>5 style variations (Dark, Minimal, Vibrant, Corporate, Gradient)</li>
+                    <li>theme.json v3 full design token system</li>
+                    <li>Self-hosted Inter font (400, 600)</li>
+                    <li>Lighthouse 95+ performance baseline</li>
+                    <li>Full WCAG 2.1 AA accessibility</li>
+                </ul>
+            </section>
+
+            <!-- Support -->
+            <section id="support">
+                <h2>Support</h2>
+                <p>For ThemeForest purchases, submit a support ticket via the item comments or the Envato support
+                    system.</p>
+                <p>For WordPress.org installs, use the <a href="https://wordpress.org/support/themes/novai/"
+                        target="_blank">WordPress.org support forum</a>.</p>
+                <p>Bug reports and feature requests: <a href="https://github.com/your-org/novai/issues"
+                        target="_blank">GitHub Issues</a>.</p>
+            </section>
+
+        </main>
+    </div>
+
+    <footer class="doc-footer">
+        <p>NovAI v1.0.0 · Licensed under GPL v2 or later · Inter font licensed under SIL Open Font License 1.1</p>
+    </footer>
+</body>
+
+</html>

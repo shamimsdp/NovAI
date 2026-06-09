@@ -1,0 +1,42 @@
+/*
+ * NovAI — Editor styles
+ * Loaded only in the block editor to match the dark frontend appearance.
+ * Keep minimal — theme.json handles most editor styling automatically.
+ */
+
+/* Match dark site background in editor canvas */
+.editor-styles-wrapper {
+	background-color: #0D0B1A !important;
+	color: #F7F6FE;
+}
+
+/* Body text colour override for readability */
+.editor-styles-wrapper p,
+.editor-styles-wrapper li,
+.editor-styles-wrapper td {
+	color: rgba(247, 246, 254, 0.7);
+}
+
+/* Headings */
+.editor-styles-wrapper h1,
+.editor-styles-wrapper h2,
+.editor-styles-wrapper h3,
+.editor-styles-wrapper h4,
+.editor-styles-wrapper h5,
+.editor-styles-wrapper h6 {
+	color: #F7F6FE;
+}
+
+/* Inline code */
+.editor-styles-wrapper code:not([class]) {
+	background: rgba(108, 71, 255, 0.15);
+	color: #A78BFA;
+	padding: 2px 6px;
+	border-radius: 4px;
+	font-size: 0.875em;
+}
+
+/* Button block outline in editor */
+.wp-element-button {
+	cursor: default;
+}

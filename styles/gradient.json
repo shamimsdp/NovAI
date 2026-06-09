@@ -1,0 +1,66 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/theme.json",
+    "version": 3,
+    "title": "Gradient",
+    "settings": {
+        "color": {
+            "palette": [
+                {
+                    "slug": "background-primary",
+                    "color": "#0D0B1A",
+                    "name": "Background Primary"
+                },
+                {
+                    "slug": "background-secondary",
+                    "color": "#1A1535",
+                    "name": "Background Secondary"
+                },
+                {
+                    "slug": "nova-purple",
+                    "color": "#7C5CFC",
+                    "name": "Nova Purple"
+                },
+                {
+                    "slug": "stellar-violet",
+                    "color": "#B39DFA",
+                    "name": "Stellar Violet"
+                },
+                {
+                    "slug": "orbit-blue",
+                    "color": "#60CFFF",
+                    "name": "Orbit Blue"
+                }
+            ]
+        }
+    },
+    "styles": {
+        "color": {
+            "background": "#0D0B1A",
+            "text": "#F7F6FE"
+        },
+        "css": ":root { --novai-glow: 0 0 80px rgba(108,71,255,0.35); } .wp-block-cover, .novai-hero-dark { position: relative; } .wp-block-cover::before, .novai-hero-dark::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 20% 50%, rgba(108,71,255,0.3) 0%, transparent 60%), radial-gradient(ellipse at 80% 20%, rgba(56,189,248,0.2) 0%, transparent 50%); pointer-events: none; z-index: 0; }",
+        "elements": {
+            "link": {
+                "color": { "text": "#B39DFA" },
+                ":hover": { "color": { "text": "#FFFFFF" } }
+            },
+            "button": {
+                "color": {
+                    "background": "#7C5CFC",
+                    "text": "#FFFFFF"
+                },
+                "border": {
+                    "radius": "10px"
+                },
+                ":hover": {
+                    "color": { "background": "#B39DFA" }
+                }
+            }
+        },
+        "blocks": {
+            "core/group": {
+                "css": ".novai-feature-card, .novai-testimonial-card, .novai-bento-card { box-shadow: 0 0 40px rgba(108,71,255,0.15), inset 0 1px 0 rgba(255,255,255,0.06); }"
+            }
+        }
+    }
+}

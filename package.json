@@ -1,0 +1,23 @@
+{
+    "name": "novai",
+    "version": "1.0.0",
+    "description": "NovAI — WordPress FSE block theme for AI startups, SaaS, and developer tools",
+    "private": true,
+    "engines": {
+        "node": ">=20.11.1 <21"
+    },
+    "scripts": {
+        "env:start": "wp-env start",
+        "env:stop": "wp-env stop",
+        "env:clean": "wp-env clean all",
+        "env:logs": "wp-env logs",
+        "pot": "wp i18n make-pot . languages/novai.pot --domain=novai --exclude=node_modules,vendor,.github,.context",
+        "zip": "powershell Compress-Archive -Path . -DestinationPath ../novai.zip -Force"
+    },
+    "devDependencies": {
+        "@wordpress/env": "^11.8.0"
+    },
+    "dependencies": {
+        "headroom-ai": "^0.22.4"
+    }
+}

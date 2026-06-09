@@ -1,0 +1,60 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/theme.json",
+    "version": 3,
+    "title": "Vibrant",
+    "settings": {
+        "color": {
+            "palette": [
+                {
+                    "slug": "background-primary",
+                    "color": "#4B28E8",
+                    "name": "Background Primary"
+                },
+                {
+                    "slug": "background-secondary",
+                    "color": "#6C47FF",
+                    "name": "Background Secondary"
+                },
+                {
+                    "slug": "background-tertiary",
+                    "color": "#8B68FF",
+                    "name": "Background Tertiary"
+                }
+            ],
+            "gradients": [
+                {
+                    "slug": "nova-gradient",
+                    "name": "Nova Gradient",
+                    "gradient": "linear-gradient(135deg, #6C47FF 0%, #A78BFA 50%, #38BDF8 100%)"
+                },
+                {
+                    "slug": "hero-gradient",
+                    "name": "Hero Gradient",
+                    "gradient": "linear-gradient(135deg, #4B28E8 0%, #6C47FF 40%, #38BDF8 100%)"
+                }
+            ]
+        }
+    },
+    "styles": {
+        "color": {
+            "background": "#6C47FF",
+            "text": "#FFFFFF"
+        },
+        "css": "body { background: linear-gradient(135deg, #4B28E8 0%, #6C47FF 40%, #38BDF8 100%) fixed; }",
+        "elements": {
+            "link": {
+                "color": { "text": "#FDE68A" },
+                ":hover": { "color": { "text": "#FFFFFF" } }
+            },
+            "button": {
+                "color": {
+                    "background": "#FFFFFF",
+                    "text": "#6C47FF"
+                },
+                ":hover": {
+                    "color": { "background": "#F7F6FE" }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,76 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/theme.json",
+    "version": 3,
+    "title": "Corporate",
+    "settings": {
+        "color": {
+            "palette": [
+                {
+                    "slug": "nova-purple",
+                    "color": "#4F3CC9",
+                    "name": "Nova Purple"
+                },
+                {
+                    "slug": "stellar-violet",
+                    "color": "#7C5CFC",
+                    "name": "Stellar Violet"
+                },
+                {
+                    "slug": "orbit-blue",
+                    "color": "#2563EB",
+                    "name": "Orbit Blue"
+                },
+                {
+                    "slug": "deep-space",
+                    "color": "#1E1E2E",
+                    "name": "Deep Space"
+                },
+                {
+                    "slug": "cloud-white",
+                    "color": "#FAFAFA",
+                    "name": "Cloud White"
+                },
+                { "slug": "nebula", "color": "#F3F4F6", "name": "Nebula" },
+                {
+                    "slug": "text-muted",
+                    "color": "#6B7280",
+                    "name": "Text Muted"
+                },
+                {
+                    "slug": "border-subtle",
+                    "color": "#E5E7EB",
+                    "name": "Border Subtle"
+                }
+            ]
+        }
+    },
+    "styles": {
+        "color": {
+            "background": "#FFFFFF",
+            "text": "#1E1E2E"
+        },
+        "elements": {
+            "h1": { "color": { "text": "#111827" } },
+            "h2": { "color": { "text": "#111827" } },
+            "h3": { "color": { "text": "#111827" } },
+            "link": {
+                "color": { "text": "#4F3CC9" },
+                ":hover": { "color": { "text": "#7C5CFC" } }
+            },
+            "button": {
+                "color": {
+                    "background": "#1E1E2E",
+                    "text": "#FFFFFF"
+                },
+                ":hover": {
+                    "color": { "background": "#4F3CC9" }
+                }
+            }
+        },
+        "blocks": {
+            "core/navigation": {
+                "color": { "text": "#374151" }
+            }
+        }
+    }
+}

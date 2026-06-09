@@ -1,0 +1,291 @@
+/*
+ * NovAI — Supplemental CSS
+ * Handles styles that cannot be expressed in theme.json:
+ * transitions, pseudo-elements, :focus-visible, print, etc.
+ *
+ * All design tokens are in theme.json. This file is supplemental only.
+ */
+
+/* ── Reset & base ────────────────────────────────────────────────────────── */
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+}
+
+img,
+video {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+
+/* ── Focus visible ───────────────────────────────────────────────────────── */
+
+:focus-visible {
+	outline: 2px solid var(--wp--preset--color--nova-purple);
+	outline-offset: 3px;
+	border-radius: 4px;
+}
+
+/* ── Skip link ───────────────────────────────────────────────────────────── */
+
+.skip-link {
+	position: absolute;
+	top: -999px;
+	left: 0;
+	z-index: 9999;
+	background: var(--wp--preset--color--nova-purple);
+	color: #fff;
+	padding: 8px 16px;
+	border-radius: 0 0 6px 0;
+	font-size: 14px;
+	font-weight: 500;
+	text-decoration: none;
+}
+
+.skip-link:focus {
+	top: 0;
+}
+
+/* ── Sticky header ───────────────────────────────────────────────────────── */
+
+.novai-header,
+.novai-nav-dark,
+.novai-nav-light {
+	position: sticky;
+	top: 0;
+	z-index: 100;
+	transition: box-shadow 200ms ease;
+}
+
+.novai-header.is-scrolled,
+.novai-nav-dark.is-scrolled {
+	box-shadow: 0 1px 20px rgba(0, 0, 0, 0.4);
+}
+
+.novai-nav-light.is-scrolled {
+	box-shadow: 0 1px 20px rgba(108, 71, 255, 0.1);
+}
+
+/* ── Navigation ──────────────────────────────────────────────────────────── */
+
+.wp-block-navigation a {
+	text-decoration: none;
+	transition: color var(--novai-transition, 200ms ease);
+}
+
+.wp-block-navigation .wp-block-navigation-item__content:hover {
+	color: var(--wp--preset--color--stellar-violet);
+}
+
+/* Mobile nav toggle */
+.wp-block-navigation__responsive-container-close,
+.wp-block-navigation__responsive-container-open {
+	color: rgba(255, 255, 255, 0.7);
+	transition: color var(--novai-transition, 200ms ease);
+}
+
+/* ── Buttons ─────────────────────────────────────────────────────────────── */
+
+.wp-element-button,
+.wp-block-button__link {
+	transition: background-color 200ms ease, color 200ms ease, transform 120ms ease, box-shadow 200ms ease;
+	cursor: pointer;
+}
+
+.wp-element-button:hover,
+.wp-block-button__link:hover {
+	transform: translateY(-1px);
+}
+
+.wp-element-button:active,
+.wp-block-button__link:active {
+	transform: translateY(0);
+}
+
+/* ── Cards ───────────────────────────────────────────────────────────────── */
+
+.novai-feature-card,
+.novai-testimonial-card,
+.novai-bento-card,
+.novai-team-card,
+.novai-int-card,
+.novai-post-card {
+	transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
+}
+
+.novai-feature-card:hover,
+.novai-testimonial-card:hover,
+.novai-bento-card:hover,
+.novai-team-card:hover,
+.novai-int-card:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 10px 30px rgba(108, 71, 255, 0.2);
+}
+
+/* ── FAQ / Details block ─────────────────────────────────────────────────── */
+
+.novai-faq-item summary {
+	cursor: pointer;
+	font-size: 14px;
+	font-weight: 500;
+	color: rgba(255, 255, 255, 0.8);
+	list-style: none;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 16px;
+	transition: color 200ms ease;
+}
+
+.novai-faq-item summary::-webkit-details-marker {
+	display: none;
+}
+
+.novai-faq-item summary::after {
+	content: '+';
+	font-size: 18px;
+	font-weight: 300;
+	color: var(--wp--preset--color--nova-purple);
+	flex-shrink: 0;
+	transition: transform 200ms ease;
+}
+
+.novai-faq-item[open] summary::after {
+	transform: rotate(45deg);
+}
+
+.novai-faq-item summary:hover {
+	color: #fff;
+}
+
+/* ── Comparison table ────────────────────────────────────────────────────── */
+
+.novai-compare-table table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+.novai-compare-table td {
+	padding: 12px 0;
+	border-bottom: 1px solid rgba(108, 71, 255, 0.1);
+}
+
+.novai-compare-table tr:last-child td {
+	border-bottom: none;
+}
+
+/* ── Browser frame mockup ────────────────────────────────────────────────── */
+
+.novai-browser-frame {
+	box-shadow: 0 24px 80px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(108, 71, 255, 0.2);
+}
+
+/* ── Code window ─────────────────────────────────────────────────────────── */
+
+.novai-code-window {
+	box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* ── Badge pill ──────────────────────────────────────────────────────────── */
+
+.novai-badge-pill {
+	display: inline-flex !important;
+}
+
+/* ── Announcement banner ─────────────────────────────────────────────────── */
+
+.novai-banner {
+	text-align: center;
+}
+
+/* ── Footer lists ────────────────────────────────────────────────────────── */
+
+.novai-footer-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.novai-footer-list a {
+	text-decoration: none;
+	transition: color 200ms ease;
+}
+
+.novai-footer-list a:hover {
+	color: var(--wp--preset--color--stellar-violet);
+}
+
+/* ── Stats grid gap override ─────────────────────────────────────────────── */
+
+.novai-stats-grid.wp-block-columns {
+	gap: 16px;
+}
+
+/* ── Changelog entry ─────────────────────────────────────────────────────── */
+
+.novai-cl-meta {
+	min-width: 80px;
+	flex-shrink: 0;
+}
+
+/* ── Scroll reveal animation ─────────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: no-preference) {
+	.novai-animate {
+		opacity: 0;
+		transform: translateY(20px);
+		transition: opacity 400ms ease, transform 400ms ease;
+	}
+
+	.novai-animate.is-visible {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* ── Print ───────────────────────────────────────────────────────────────── */
+
+@media print {
+	.novai-header,
+	.novai-nav-dark,
+	.novai-nav-light,
+	.novai-banner,
+	.wp-block-buttons {
+		display: none !important;
+	}
+}
+
+/* ── Selection ───────────────────────────────────────────────────────────── */
+
+::selection {
+	background: rgba(108, 71, 255, 0.35);
+	color: #fff;
+}
+
+/* ── Scrollbar (Webkit) ──────────────────────────────────────────────────── */
+
+::-webkit-scrollbar {
+	width: 8px;
+}
+
+::-webkit-scrollbar-track {
+	background: #0D0B1A;
+}
+
+::-webkit-scrollbar-thumb {
+	background: rgba(108, 71, 255, 0.4);
+	border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: rgba(108, 71, 255, 0.7);
+}

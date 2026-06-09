@@ -1,0 +1,45 @@
+<!-- wp:template-part {"slug":"header","area":"header"} /-->
+
+<!-- wp:group {"tagName":"main","layout":{"type":"constrained"}} -->
+<main class="wp-block-group">
+
+    <!-- wp:query {"queryId":1,"query":{"perPage":10,"offset":0,"postType":"post","order":"desc","orderBy":"date","inherit":true}} -->
+    <div class="wp-block-query">
+
+        <!-- wp:post-template {"layout":{"type":"default"}} -->
+
+        <!-- wp:group {"className":"novai-post-card","style":{"spacing":{"padding":{"top":"var:preset|spacing|lg","bottom":"var:preset|spacing|lg"},"blockGap":"var:preset|spacing|sm"},"border":{"bottom":{"color":"var:preset|color|border-subtle","width":"1px"}}},"layout":{"type":"constrained"}} -->
+        <div class="wp-block-group novai-post-card">
+
+            <!-- wp:post-date {"style":{"typography":{"fontSize":"var:preset|font-size|xs"},"color":{"text":"var:preset|color|text-muted"}}} /-->
+
+            <!-- wp:post-title {"isLink":true,"style":{"typography":{"fontWeight":"600","letterSpacing":"-0.02em"},"color":{"text":"var:preset|color|cloud-white"}}} /-->
+
+            <!-- wp:post-excerpt {"moreText":"Read more →","style":{"color":{"text":"var:preset|color|text-secondary"},"typography":{"fontSize":"var:preset|font-size|sm"}}} /-->
+
+            <!-- wp:post-terms {"term":"category","style":{"typography":{"fontSize":"var:preset|font-size|xs"},"color":{"text":"var:preset|color|stellar-violet"}}} /-->
+
+        </div>
+        <!-- /wp:group -->
+
+        <!-- /wp:post-template -->
+
+        <!-- wp:query-pagination {"layout":{"type":"flex","justifyContent":"center"}} -->
+        <!-- wp:query-pagination-previous /-->
+        <!-- wp:query-pagination-numbers /-->
+        <!-- wp:query-pagination-next /-->
+        <!-- /wp:query-pagination -->
+
+        <!-- wp:query-no-results -->
+        <!-- wp:paragraph {"style":{"color":{"text":"var:preset|color|text-muted"}}} -->
+        <p>No posts found. Start writing!</p>
+        <!-- /wp:paragraph -->
+        <!-- /wp:query-no-results -->
+
+    </div>
+    <!-- /wp:query -->
+
+</main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","area":"footer"} /-->

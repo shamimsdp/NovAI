@@ -1,0 +1,46 @@
+<!-- wp:template-part {"slug":"header","area":"header"} /-->
+
+<!-- wp:group {"tagName":"main","layout":{"type":"constrained"}} -->
+<main class="wp-block-group">
+
+    <!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|3xl","bottom":"var:preset|spacing|3xl"},"blockGap":"var:preset|spacing|lg"}},"layout":{"type":"constrained"}} -->
+    <div class="wp-block-group">
+
+        <!-- wp:post-featured-image {"isLink":false,"style":{"border":{"radius":"16px"},"spacing":{"margin":{"bottom":"var:preset|spacing|lg"}}},"width":"100%"} /-->
+
+        <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|sm"}},"layout":{"type":"constrained"}} -->
+        <div class="wp-block-group">
+
+            <!-- wp:post-terms {"term":"category","style":{"typography":{"fontSize":"var:preset|font-size|xs","fontWeight":"500","letterSpacing":"0.08em","textTransform":"uppercase"},"color":{"text":"var:preset|color|nova-purple"}}} /-->
+
+            <!-- wp:post-title {"level":1,"style":{"typography":{"fontWeight":"600","letterSpacing":"-0.03em"},"color":{"text":"var:preset|color|cloud-white"}}} /-->
+
+            <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|sm"}},"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between"}} -->
+            <div class="wp-block-group">
+                <!-- wp:post-author {"showAvatar":true,"style":{"typography":{"fontSize":"var:preset|font-size|sm"},"color":{"text":"var:preset|color|text-muted"}}} /-->
+                <!-- wp:post-date {"style":{"typography":{"fontSize":"var:preset|font-size|sm"},"color":{"text":"var:preset|color|text-muted"}}} /-->
+            </div>
+            <!-- /wp:group -->
+
+        </div>
+        <!-- /wp:group -->
+
+        <!-- wp:separator {"style":{"color":{"background":"var:preset|color|border-subtle"}}} -->
+        <hr class="wp-block-separator has-alpha-channel-opacity" />
+        <!-- /wp:separator -->
+
+        <!-- wp:post-content {"layout":{"type":"constrained"}} /-->
+
+        <!-- wp:separator {"style":{"color":{"background":"var:preset|color|border-subtle"}}} -->
+        <hr class="wp-block-separator has-alpha-channel-opacity" />
+        <!-- /wp:separator -->
+
+        <!-- wp:post-terms {"term":"post_tag","prefix":"Tags: ","style":{"typography":{"fontSize":"var:preset|font-size|xs"},"color":{"text":"var:preset|color|text-muted"}}} /-->
+
+    </div>
+    <!-- /wp:group -->
+
+</main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","area":"footer"} /-->
