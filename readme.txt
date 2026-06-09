@@ -90,6 +90,18 @@ Gradient: Dark background with radial glow overlays
 4. Follow the import wizard.
 5. Set the front page under Settings → Reading → Your homepage displays → A static page.
 
+= Recommended Plugins (TGMPA) =
+
+NovAI bundles TGM Plugin Activation (TGMPA) and shows recommended plugin notices after theme activation.
+
+Recommended (not required):
+1. WooCommerce
+2. WP All Import
+3. Contact Form 7
+4. Yoast SEO
+
+You can install any or all of these from Appearance → Install Plugins.
+
 == Frequently Asked Questions ==
 
 = Does NovAI require the block editor? =
@@ -119,6 +131,10 @@ Yes. Create a folder novai-child/ in /wp-content/themes/ with a style.css declar
 = How do I update the theme? =
 
 For ThemeForest purchases, download the latest version and install via Appearance → Themes → Upload Theme. For WordPress.org, use the standard automatic update mechanism when available.
+
+= Why am I seeing an "Install Plugins" notice in admin? =
+
+NovAI uses TGMPA to suggest commonly used companion plugins. These are recommendations only, not mandatory for the theme to function.
 
 = How do I translate NovAI? =
 
@@ -151,6 +167,7 @@ This usually means a block was added or updated in a WordPress version newer tha
 * Supplemental CSS for transitions, hover states, and reduced motion.
 * Vanilla JS sticky header and scroll reveal (no jQuery).
 * Translation-ready with languages/novai.pot.
+* TGMPA integrated for recommended plugin installation workflow.
 * wp-env local development environment pre-configured.
 * GitHub Copilot agents and skills pre-configured.
 
