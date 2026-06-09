@@ -40,6 +40,11 @@ function novai_register_recommended_plugins(): void {
 			'slug'     => 'wordpress-seo',
 			'required' => false,
 		],
+		[
+			'name'     => 'Kirki Customizer Framework',
+			'slug'     => 'kirki',
+			'required' => false,
+		],
 	];
 
 	$config = [

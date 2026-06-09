@@ -10,5 +10,8 @@
         "SCRIPT_DEBUG": true,
         "WP_ENVIRONMENT_TYPE": "local"
     },
+    "lifecycleScripts": {
+        "afterStart": "wp-env run cli wp theme activate NovAI"
+    },
     "mappings": {}
 }
