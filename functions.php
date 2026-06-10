@@ -71,6 +71,9 @@ add_action( 'wp_enqueue_scripts', 'novai_enqueue_assets' );
 require_once NOVAI_DIR . '/inc/block-patterns.php';
 require_once NOVAI_DIR . '/inc/font-preload.php';
 require_once NOVAI_DIR . '/inc/performance.php';
+require_once NOVAI_DIR . '/inc/lib/class-tgm-plugin-activation.php';
+require_once NOVAI_DIR . '/inc/tgmpa.php';
+require_once NOVAI_DIR . '/inc/kirki-options.php';
 
 // ── Block patterns auto-loader ──────────────────────────────────────────────
 // WordPress 6.0+ auto-registers pattern files in /patterns/ using the PHP
